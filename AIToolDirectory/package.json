@@ -1,0 +1,26 @@
+{
+  "name": "ai-tools-directory",
+  "version": "1.0.0",
+  "description": "Comprehensive directory of 110+ AI tools with search and filtering",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Deploy to Vercel or open index.html'",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ai",
+    "tools",
+    "directory",
+    "chatgpt",
+    "midjourney",
+    "github-copilot"
+  ],
+  "author": "AI Tools Directory",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
+    "openai": "^5.3.0",
+    "vercel": "^43.1.0"
+  }
+}

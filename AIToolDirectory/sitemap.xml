@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://aidashzone.com/</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/sitemap.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/about.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/contact.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/privacy.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/terms.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://aidashzone.com/blog/</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/blog/chatgpt-vs-claude-vs-gemini-comparison/</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/blog/midjourney-vs-dalle-3-comparison/</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/blog/google-veo-3-review-ai-video-generator/</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- AI Tool Pages -->
+  <url>
+    <loc>https://aidashzone.com/tools/chatgpt.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/claude.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/gemini.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/perplexity.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/midjourney.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/dall-e.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/stable-diffusion.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/runway-ml.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/grammarly.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/jasper.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/notion-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/github-copilot.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/copy-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/writesonic.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/synthesia.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/zapier.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/framer.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/luma-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Placeholder URLs for future tool pages -->
+  <url>
+    <loc>https://aidashzone.com/tools/heygen.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/pictory.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/lumen5.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/sora.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/invideo.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/make.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/uipath.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/microsoft-power-automate.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/calendly.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/todoist.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/trello.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/asana.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/monday.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/airtable.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/clickup.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/superhuman.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/canva-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/figma-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/adobe-firefly.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/murf.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/speechify.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/otter-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/descript.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/hubspot-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/mailchimp-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/frase.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/surfer-seo.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/mixo.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/10web.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/replit-ai.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aidashzone.com/tools/tabnine.html</loc>
+    <lastmod>2025-01-20T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

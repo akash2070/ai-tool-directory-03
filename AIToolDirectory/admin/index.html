@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDashZone Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .admin-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1200px;
+            display: none;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            margin-top: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
+        .error {
+            color: #dc2626;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .success {
+            color: #059669;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .tab.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .item-list {
+            margin-top: 2rem;
+        }
+
+        .item {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            width: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .forgot-password a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="loginContainer">
+        <div class="logo">
+            <h1>🤖 AIDashZone</h1>
+            <p>Admin Panel</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <div id="loginError" class="error"></div>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+            
+            <div class="forgot-password">
+                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-container" id="adminContainer">
+        <div class="logo">
+            <h1>🤖 AIDashZone Admin</h1>
+            <button class="btn btn-secondary" id="logoutBtn" style="width: auto; float: right;">Logout</button>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="blogs">Blog Management</div>
+            <div class="tab" data-tab="tools">AI Tools Management</div>
+            <div class="tab" data-tab="settings">Settings</div>
+        </div>
+
+        <!-- Blog Management -->
+        <div class="tab-content active" id="blogs">
+            <h2>Create New Blog Post</h2>
+            <form id="blogForm">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="blogTitle">Title</label>
+                        <input type="text" id="blogTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogSlug">URL Slug</label>
+                        <input type="text" id="blogSlug" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="blogDescription">Meta Description</label>
+                    <textarea id="blogDescription" placeholder="SEO description for search engines"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="blogKeywords">Keywords</label>
+                    <input type="text" id="blogKeywords" placeholder="Comma-separated keywords">
+                </div>
+                
+                <div class="form-group">
+                    <label for="blogContent">Content (HTML)</label>
+                    <textarea id="blogContent" rows="10" placeholder="Write your blog content in HTML"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Create Blog Post</button>
+            </form>
+
+            <div class="item-list" id="blogList">
+                <h3>Existing Blog Posts</h3>
+                <!-- Blog posts will be loaded here -->
+            </div>
+        </div>
+
+        <!-- AI Tools Management -->
+        <div class="tab-content" id="tools">
+            <h2>Add New AI Tool</h2>
+            <form id="toolForm">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="toolName">Tool Name</label>
+                        <input type="text" id="toolName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="toolWebsite">Website URL</label>
+                        <input type="url" id="toolWebsite" required>
+                    </div>
+                </div>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="toolCategory">Category</label>
+                        <select id="toolCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="writing">Writing & Content</option>
+                            <option value="development">Development</option>
+                            <option value="image">Image Generation</option>
+                            <option value="video">Video Creation</option>
+                            <option value="design">Design</option>
+                            <option value="audio">Audio & Music</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="chatbots">AI Chatbots</option>
+                            <option value="research">Research</option>
+                            <option value="automation">Automation</option>
+                            <option value="presentation">Presentations</option>
+                            <option value="website">Website Building</option>
+                            <option value="seo">SEO & Marketing</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toolPricing">Pricing</label>
+                        <select id="toolPricing" required>
+                            <option value="">Select Pricing</option>
+                            <option value="free">Free</option>
+                            <option value="freemium">Freemium</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="toolLogo">Logo (Emoji)</label>
+                        <input type="text" id="toolLogo" placeholder="🤖" maxlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="toolRating">Rating (1-5)</label>
+                        <input type="number" id="toolRating" min="1" max="5" step="0.1" value="4.5">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolDescription">Description</label>
+                    <textarea id="toolDescription" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toolUsers">User Count</label>
+                    <input type="text" id="toolUsers" placeholder="1M+" value="1M+">
+                </div>
+                
+                <button type="submit" class="btn">Add AI Tool</button>
+            </form>
+
+            <div class="item-list" id="toolList">
+                <h3>Existing AI Tools</h3>
+                <!-- AI tools will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="tab-content" id="settings">
+            <h2>Admin Settings</h2>
+            
+            <div class="form-group">
+                <label for="newPassword">Change Password</label>
+                <input type="password" id="newPassword" placeholder="Enter new password">
+                <button type="button" class="btn" id="changePasswordBtn">Update Password</button>
+            </div>
+            
+            <div class="form-group">
+                <h3>Password Reset Email</h3>
+                <p>Password reset emails will be sent to: <strong>akashtn2070@gmail.com</strong></p>
+                <button type="button" class="btn btn-secondary" id="sendResetEmail">Send Reset Email</button>
+            </div>
+            
+            <div class="form-group">
+                <h3>Export Data</h3>
+                <button type="button" class="btn btn-secondary" id="exportData">Export All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Admin configuration
+        const ADMIN_CONFIG = {
+            password: 'Anaik@7676',
+            resetEmail: 'akashtn2070@gmail.com'
+        };
+
+        // Storage keys
+        const STORAGE_KEYS = {
+            blogs: 'aidashzone_blogs',
+            tools: 'aidashzone_tools',
+            auth: 'aidashzone_auth'
+        };
+
+        // Initialize admin panel
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAuth();
+            setupEventListeners();
+        });
+
+        function initializeAuth() {
+            const isAuthenticated = localStorage.getItem(STORAGE_KEYS.auth) === 'true';
+            if (isAuthenticated) {
+                showAdminPanel();
+            }
+        }
+
+        function setupEventListeners() {
+            // Login form
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+            document.getElementById('forgotPasswordLink').addEventListener('click', handleForgotPassword);
+            document.getElementById('logoutBtn').addEventListener('click', handleLogout);
+
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+            });
+
+            // Forms
+            document.getElementById('blogForm').addEventListener('submit', handleBlogSubmit);
+            document.getElementById('toolForm').addEventListener('submit', handleToolSubmit);
+            
+            // Settings
+            document.getElementById('changePasswordBtn').addEventListener('click', handlePasswordChange);
+            document.getElementById('sendResetEmail').addEventListener('click', handleSendResetEmail);
+            document.getElementById('exportData').addEventListener('click', handleExportData);
+
+            // Auto-generate slug from title
+            document.getElementById('blogTitle').addEventListener('input', function(e) {
+                const slug = e.target.value.toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/(^-|-$)/g, '');
+                document.getElementById('blogSlug').value = slug;
+            });
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorEl = document.getElementById('loginError');
+
+            if (password === ADMIN_CONFIG.password) {
+                localStorage.setItem(STORAGE_KEYS.auth, 'true');
+                showAdminPanel();
+                errorEl.textContent = '';
+            } else {
+                errorEl.textContent = 'Invalid password';
+            }
+        }
+
+        function handleForgotPassword(e) {
+            e.preventDefault();
+            // Open default email client
+            window.location.href = `mailto:${ADMIN_CONFIG.resetEmail}?subject=AIDashZone Admin Password Reset&body=Please reset my admin password for AIDashZone.`;
+        }
+
+        function handleLogout() {
+            localStorage.removeItem(STORAGE_KEYS.auth);
+            showLoginForm();
+        }
+
+        function showAdminPanel() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('adminContainer').style.display = 'block';
+            loadExistingData();
+        }
+
+        function showLoginForm() {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('adminContainer').style.display = 'none';
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function handleBlogSubmit(e) {
+            e.preventDefault();
+            const blogData = {
+                id: Date.now(),
+                title: document.getElementById('blogTitle').value,
+                slug: document.getElementById('blogSlug').value,
+                description: document.getElementById('blogDescription').value,
+                keywords: document.getElementById('blogKeywords').value,
+                content: document.getElementById('blogContent').value,
+                date: new Date().toISOString()
+            };
+
+            saveBlog(blogData);
+            generateBlogHTML(blogData);
+            
+            // Reset form
+            document.getElementById('blogForm').reset();
+            loadBlogs();
+            
+            alert('Blog post created successfully! Copy the HTML from console.');
+        }
+
+        function handleToolSubmit(e) {
+            e.preventDefault();
+            const toolData = {
+                id: Date.now(),
+                name: document.getElementById('toolName').value,
+                website: document.getElementById('toolWebsite').value,
+                category: document.getElementById('toolCategory').value,
+                pricing: document.getElementById('toolPricing').value,
+                logo: document.getElementById('toolLogo').value,
+                rating: parseFloat(document.getElementById('toolRating').value),
+                description: document.getElementById('toolDescription').value,
+                userCount: document.getElementById('toolUsers').value
+            };
+
+            saveTool(toolData);
+            
+            // Reset form
+            document.getElementById('toolForm').reset();
+            loadTools();
+            
+            alert('AI tool added successfully!');
+        }
+
+        function saveBlog(blogData) {
+            const blogs = JSON.parse(localStorage.getItem(STORAGE_KEYS.blogs) || '[]');
+            blogs.push(blogData);
+            localStorage.setItem(STORAGE_KEYS.blogs, JSON.stringify(blogs));
+        }
+
+        function saveTool(toolData) {
+            const tools = JSON.parse(localStorage.getItem(STORAGE_KEYS.tools) || '[]');
+            tools.push(toolData);
+            localStorage.setItem(STORAGE_KEYS.tools, JSON.stringify(tools));
+        }
+
+        function generateBlogHTML(blogData) {
+            const htmlTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${blogData.title}</title>
+    <meta name="description" content="${blogData.description}">
+    <meta name="keywords" content="${blogData.keywords}">
+    <meta property="og:title" content="${blogData.title}">
+    <meta property="og:description" content="${blogData.description}">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://aidashzone.com/blog/${blogData.slug}/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🤖%3C/text%3E%3C/svg%3E">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { background: #f8fafc; padding: 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; }
+        .nav { display: flex; gap: 2rem; align-items: center; }
+        .nav a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        h1 { color: #2563eb; margin-bottom: 1rem; }
+        .meta { color: #666; margin-bottom: 2rem; }
+        .content { line-height: 1.7; }
+        .content h2 { color: #1f2937; margin: 2rem 0 1rem; }
+        .content p { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/">🤖 AIDashZone</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://bestutils.com" target="_blank">Calculators</a>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>${blogData.title}</h1>
+            <div class="meta">Published: ${new Date(blogData.date).toLocaleDateString()}</div>
+            <div class="content">${blogData.content}</div>
+        </article>
+    </main>
+</body>
+</html>`;
+
+            console.log('=== BLOG HTML CODE ===');
+            console.log(htmlTemplate);
+            console.log('=== END BLOG HTML ===');
+        }
+
+        function loadExistingData() {
+            loadBlogs();
+            loadTools();
+        }
+
+        function loadBlogs() {
+            const blogs = JSON.parse(localStorage.getItem(STORAGE_KEYS.blogs) || '[]');
+            const blogList = document.getElementById('blogList');
+            
+            if (blogs.length === 0) {
+                blogList.innerHTML = '<h3>No blog posts yet</h3>';
+                return;
+            }
+
+            const blogsHTML = blogs.map(blog => `
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">${blog.title}</div>
+                        <div class="item-actions">
+                            <button class="btn btn-small" onclick="regenerateBlog(${blog.id})">Regenerate HTML</button>
+                            <button class="btn btn-small btn-danger" onclick="deleteBlog(${blog.id})">Delete</button>
+                        </div>
+                    </div>
+                    <p><strong>Slug:</strong> ${blog.slug}</p>
+                    <p><strong>Date:</strong> ${new Date(blog.date).toLocaleDateString()}</p>
+                </div>
+            `).join('');
+
+            blogList.innerHTML = '<h3>Existing Blog Posts</h3>' + blogsHTML;
+        }
+
+        function loadTools() {
+            const tools = JSON.parse(localStorage.getItem(STORAGE_KEYS.tools) || '[]');
+            const toolList = document.getElementById('toolList');
+            
+            if (tools.length === 0) {
+                toolList.innerHTML = '<h3>No custom tools added yet</h3>';
+                return;
+            }
+
+            const toolsHTML = tools.map(tool => `
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">${tool.logo} ${tool.name}</div>
+                        <div class="item-actions">
+                            <button class="btn btn-small btn-danger" onclick="deleteTool(${tool.id})">Delete</button>
+                        </div>
+                    </div>
+                    <p><strong>Category:</strong> ${tool.category} | <strong>Pricing:</strong> ${tool.pricing}</p>
+                    <p>${tool.description}</p>
+                </div>
+            `).join('');
+
+            toolList.innerHTML = '<h3>Custom AI Tools</h3>' + toolsHTML;
+        }
+
+        function regenerateBlog(id) {
+            const blogs = JSON.parse(localStorage.getItem(STORAGE_KEYS.blogs) || '[]');
+            const blog = blogs.find(b => b.id === id);
+            if (blog) {
+                generateBlogHTML(blog);
+                alert('Blog HTML generated! Check console for code.');
+            }
+        }
+
+        function deleteBlog(id) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                const blogs = JSON.parse(localStorage.getItem(STORAGE_KEYS.blogs) || '[]');
+                const updatedBlogs = blogs.filter(blog => blog.id !== id);
+                localStorage.setItem(STORAGE_KEYS.blogs, JSON.stringify(updatedBlogs));
+                loadBlogs();
+            }
+        }
+
+        function deleteTool(id) {
+            if (confirm('Are you sure you want to delete this AI tool?')) {
+                const tools = JSON.parse(localStorage.getItem(STORAGE_KEYS.tools) || '[]');
+                const updatedTools = tools.filter(tool => tool.id !== id);
+                localStorage.setItem(STORAGE_KEYS.tools, JSON.stringify(updatedTools));
+                loadTools();
+            }
+        }
+
+        function handlePasswordChange() {
+            const newPassword = document.getElementById('newPassword').value;
+            if (newPassword.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return;
+            }
+            
+            ADMIN_CONFIG.password = newPassword;
+            localStorage.setItem('aidashzone_admin_password', newPassword);
+            alert('Password updated successfully!');
+            document.getElementById('newPassword').value = '';
+        }
+
+        function handleSendResetEmail() {
+            window.location.href = `mailto:${ADMIN_CONFIG.resetEmail}?subject=AIDashZone Admin Password Reset&body=Please reset my admin password for AIDashZone.`;
+        }
+
+        function handleExportData() {
+            const blogs = JSON.parse(localStorage.getItem(STORAGE_KEYS.blogs) || '[]');
+            const tools = JSON.parse(localStorage.getItem(STORAGE_KEYS.tools) || '[]');
+            
+            const exportData = {
+                blogs,
+                tools,
+                exportDate: new Date().toISOString()
+            };
+            
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'aidashzone-data-export.json';
+            link.click();
+        }
+
+        // Load custom password on startup
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedPassword = localStorage.getItem('aidashzone_admin_password');
+            if (savedPassword) {
+                ADMIN_CONFIG.password = savedPassword;
+            }
+        });
+    </script>
+</body>
+</html>
